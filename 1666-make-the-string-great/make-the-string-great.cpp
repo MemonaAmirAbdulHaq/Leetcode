@@ -1,29 +1,14 @@
 class Solution {
 public:
     string makeGood(string s) {
-         vector<char>st;
-
-        st.push_back(s[0]);
-
-        for(int i=1;i<s.size();i++){
-
-           
-            char topval = st.back();
-
-
-          
-                if( !st.empty() && abs(topval - s[i]) == 32){
-                    st.pop_back();
-                }else{
-                    st.push_back(s[i]);
-                }
-
+         int j = 0; 
+    for (int i = 0; i < s.size(); i++) {
+        if (j > 0 && abs(s[j - 1] - s[i]) == 32) {
+            j--; 
+        } else {
+            s[j++] = s[i]; 
         }
-
-       
-     string ans(st.begin(), st.end());
-
-        return ans;
-        
+    }
+    return s.substr(0, j);
     }
 };
