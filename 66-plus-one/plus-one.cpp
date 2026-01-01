@@ -5,7 +5,7 @@ public:
 
         
         for (int i = n - 1; i >= 0; i--) {
-            // If the digit is less than 9, just increment and return
+            
             if (digits[i] < 9) {
                 digits[i]++;
                 return digits;
